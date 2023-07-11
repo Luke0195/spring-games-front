@@ -1,0 +1,14 @@
+{
+  "overrides": [
+    {
+      "files": [
+        "*.ts;",
+        "*.tsx;"
+      ],
+      "extends": "standard-with-typescript",
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      }
+    }
+  ]
+}
