@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  node:
+   image: node:18.16-alpine
+   container_name: spring-games-api
+   working_dir: /usr/app
+   ports:
+     - '3000:3000'
+   command: npm run dev
+   volumes:
+    - ./:/usr/app
