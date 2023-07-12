@@ -5,7 +5,7 @@
         "*.ts;",
         "*.tsx;"
       ],
-      "extends": ["next", "standard-with-typescript"],
+      "extends": ["standard-with-typescript"],
       "parser": "@babel/eslint-parser",
       "parserOptions": {
         "sourceType": "module",
