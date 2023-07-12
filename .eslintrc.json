@@ -1,7 +1,7 @@
 {
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", "*.js","*.jsx"],
+      "files": ["*.ts", "*.tsx"],
       "extends": ["standard-with-typescript"],
       "parserOptions": {
         "sourceType": "module",
@@ -12,7 +12,8 @@
         "react/no-unescaped-entities": "off",
         "@next/next/no-page-custom-font": "off",
         "@typescript-eslint/comma-dangle": "off",
-        "@typescript-eslint/space-before-function-paren": "off"
+        "@typescript-eslint/space-before-function-paren": "off",
+        "@typescript-eslint/triple-slash-reference": "off"
       }
     }
 
