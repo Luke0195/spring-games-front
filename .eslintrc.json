@@ -5,9 +5,13 @@
         "*.ts;",
         "*.tsx;"
       ],
-      "extends": "standard-with-typescript",
+      "extends": ["next", "standard-with-typescript"],
+      "parser": "@babel/eslint-parser",
       "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion":2019,
         "project": "./tsconfig.json"
+
       }
     }
   ]
