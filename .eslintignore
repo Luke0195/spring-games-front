@@ -2,3 +2,5 @@ dist
 node_modules
 .next
 next.config.js
+jest-integration-config.js
+jest-unit-config.js
