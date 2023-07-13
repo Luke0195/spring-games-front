@@ -20,3 +20,16 @@
 html,body{
   height:100vh;
 }
+
+
+
+.custom-section {
+   position:relative;
+   height: 25vh;
+   background-color: #fff;
+   overflow: hidden;
+   display: flex;
+   align-items:center;
+}
+
+
