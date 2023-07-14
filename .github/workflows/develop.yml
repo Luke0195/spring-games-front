@@ -26,3 +26,15 @@ jobs:
       run: npm run test
     - name: Build
       run: npm run build
+  CI:
+    runs-on: ubuntu-latest
+    needs: build
+    steps: 
+     - name: buid to aws ECR
+       run: echo "teste"
+  CD:
+   runs-on: ubuntu-latest
+   needs: CI
+   steps:
+   - name: build ecr image to EC2
+     run: echo "Deploying to EC2"
