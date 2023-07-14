@@ -1,14 +1,18 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render, screen, type RenderResult } from '@testing-library/react'
 import SignIn from './page'
+
+const makeSut = (): RenderResult => {
+  return render(<SignIn />)
+}
 
 describe('SignIn Page', () => {
   it('Should render component correctly', () => {
-    render(<SignIn />)
+    makeSut()
   })
 
   it('Should render heading 1 with correct value', () => {
-    render(<SignIn />)
+    makeSut()
     const heading = screen.getByRole('heading', {
       level: 1,
     })
