@@ -16,6 +16,6 @@ describe('SignIn Page', () => {
     const heading = screen.getByRole('heading', {
       level: 1,
     })
-    expect(heading.innerHTML).toBe(' Entre com o seu NickName')
+    expect(heading.innerHTML).toBe('Entre com o seu Login')
   })
 })
