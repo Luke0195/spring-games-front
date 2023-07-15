@@ -18,4 +18,16 @@ describe('SignIn Page', () => {
     })
     expect(heading.innerHTML).toBe('Entre com o seu Login')
   })
+
+  it('Should  start signin form with initial values', () => {
+    makeSut()
+    const input = screen.getByPlaceholderText(
+      /entre com o seu nick name/i
+    ) as HTMLInputElement
+    console.log('Innner htl', input)
+    const button = screen.getByRole('button') as HTMLButtonElement
+    expect(input.innerHTML).toBe('')
+    expect(input.defaultValue).toBe('')
+    expect(button.disabled).toBe(true)
+  })
 })
