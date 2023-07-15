@@ -1,6 +1,6 @@
+import * as BsIcons from 'react-icons/bs'
 import Image from 'next/image'
 import Link from 'next/link'
-import * as BsIcons from 'react-icons/bs'
 
 export default function Home(): React.ReactNode {
   return (

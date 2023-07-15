@@ -1,6 +1,6 @@
 import React from 'react'
-import { render, screen, type RenderResult } from '@testing-library/react'
 import SignIn from './page'
+import { render, screen, type RenderResult } from '@testing-library/react'
 
 const makeSut = (): RenderResult => {
   return render(<SignIn />)

@@ -1,6 +1,6 @@
-import React from 'react'
-import { render, screen, type RenderResult } from '@testing-library/react'
 import Home from './page'
+import { render, screen, type RenderResult } from '@testing-library/react'
+import React from 'react'
 
 interface SutTypes {
   sut: RenderResult

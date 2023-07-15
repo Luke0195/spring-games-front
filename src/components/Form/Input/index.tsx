@@ -1,7 +1,7 @@
 import { InputContent } from './input-content'
 import { InputIcon } from './input-icon'
-import { InputWrapper } from './input-wrapper'
 import { InputLabel } from './input-label'
+import { InputWrapper } from './input-wrapper'
 
 export const InputRoot = {
   InputContent,
