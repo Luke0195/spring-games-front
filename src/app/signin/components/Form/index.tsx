@@ -9,7 +9,9 @@ export function Form() {
         <InputRoot.InputIcon icon={FiMail} color="#ccc" size={20} />
         <InputRoot.InputContent placeholder="Entre com o seu Nick Name" />
       </InputRoot.InputWrapper>
-      <ButtonRoot.ButtonWrapper className="w-96 h-11 bg-purple-600 rounded text-white my-6">
+      <ButtonRoot.ButtonWrapper
+        className="w-96 h-11 bg-purple-600 rounded text-white my-6 disabled:bg-gray-300 cursor-not-allowed"
+        disabled={true}>
         <ButtonRoot.ButtonContent> Salvar </ButtonRoot.ButtonContent>
       </ButtonRoot.ButtonWrapper>
       <Link
