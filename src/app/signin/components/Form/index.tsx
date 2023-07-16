@@ -14,9 +14,7 @@ export function Form() {
         disabled={true}>
         <ButtonRoot.ButtonContent> Salvar </ButtonRoot.ButtonContent>
       </ButtonRoot.ButtonWrapper>
-      <Link
-        href={'Não possui conta'}
-        className="flex items-center hover:text-gray-700">
+      <Link href="/signup" className="flex items-center hover:text-gray-700">
         <span className="px-2 text-gray-400 "> Não possui conta</span>
         <FiLogIn className="text-gray-400" />
       </Link>
