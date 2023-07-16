@@ -1,5 +1,6 @@
 'use client'
 import { Logo } from '@/components/Logo'
+import * as animations from '@/shared/animations'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -11,12 +12,7 @@ export default function Home(): React.ReactNode {
         <div className="w-3/5 m-auto bg-red p-2 flex align-middle justify-between">
           <motion.div
             className="h-100 flex flex-col align-middle justify-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-              ease: 'easeIn',
-              duration: 2,
-            }}>
+            {...animations.showContentWithOpacity}>
             <div className="  flex flex-col items-start justify-center px-10 ">
               <Logo />
               <strong className="py-2 text-lg text-neutral-100">
@@ -35,12 +31,7 @@ export default function Home(): React.ReactNode {
           </motion.div>
           <motion.div
             className=" mix-blend-multiply"
-            initial={{ x: 0, opacity: 0.1 }}
-            animate={{ x: -80, opacity: 1 }}
-            transition={{
-              ease: 'easeOut',
-              duration: 1,
-            }}>
+            {...animations.animationMovingLeftWithOpacity}>
             <Image
               src={'/img/cybersport_02.jpg'}
               width={400}
