@@ -15,3 +15,21 @@ export const animationMovingLeftWithOpacity = {
     duration: 1,
   },
 }
+
+export const animationMovingRigthWithOpactity = {
+  initial: { x: -80, opacity: 0.1 },
+  animate: { x: 0, opacity: 1 },
+  transition: {
+    ease: 'easeOut',
+    duration: 1,
+  },
+}
+
+export const animationMovingDownWithOpactity = {
+  initial: { y: -50, opacity: 0.1 },
+  animate: { y: 0, opacity: 1 },
+  transition: {
+    ease: 'easeOut',
+    duration: 1,
+  },
+}
