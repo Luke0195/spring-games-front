@@ -28,31 +28,36 @@ jobs:
       run: npm run build
   
   deploy:
-   runs-on: ubuntu-latest
-   needs: build
-   name: Bora para cima 🚀 
-   steps:
-   - uses: nwtgck/actions-netlify@v2.0.0
-     with:
-      # Publish directory
-      publish-dir: ./.next
-      # Functions directory
-      # Custom deploy message for Netlify
-      deploy-message: Bora para cima! 🚀
-      # GitHub token
-      github-token: ${{ secrets.GIT_TOKEN }}
-      # Production branch
-      production-branch: dev
-      # Indicate wether to deploy production build
-      production-deploy: dev
-      # Enable pull request comment
-      enable-pull-request-comment: false
-      # Enable commit comment
-      enable-commit-comment: false
-      # Enable GitHub commit status
-      enable-commit-status: false
-      # Overwrites pull request comment
-      overwrites-pull-request-comment: false
-    
+    runs-on: ubuntu-latest
+    name: Netlify Actions
+    needs: build
+    steps:   
+    - uses: nwtgck/actions-netlify@v2.0.0
+      with:
+        # Publish directory
+        publish-dir: ./.next
+        # Custom deploy message for Netlify
+        deploy-message: "Go to God 🚀"
+        # GitHub token
+        github-token: ${{SECRETS.GIT_TOKEN}}
+        # Production branch
+        production-branch: dev
+        # Indicate wether to deploy production build
+        production-deploy: dev
+        # Enable pull request comment
+        enable-pull-request-comment: false
+        # Enable commit comment
+        enable-commit-comment: true
+        # Enable GitHub commit status
+        enable-commit-status: true
+        # Overwrites pull request comment
+        overwrites-pull-request-comment: false
+        # Environment name of GitHub Deployments
+        github-deployment-environment: dev
+        # Description of the GitHub Deployment
+        github-deployment-description: developer 
+        # Fails if no credentials provided
+        fails-without-credentials: true
 
-  
+
+
