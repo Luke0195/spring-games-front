@@ -34,30 +34,10 @@ jobs:
     steps:   
     - uses: nwtgck/actions-netlify@v2.0.0
       with:
-        # Publish directory
         publish-dir: ./.next
-        # Custom deploy message for Netlify
-        deploy-message: "Go to God 🚀"
-        # GitHub token
-        GITHUB-TOKEN: ${{ secrets.GIT_TOKEN }}
-        # Production branch 
-        production-branch: dev
-        # Indicate wether to deploy production build
-        production-deploy: dev
-        # Enable pull request comment
-        enable-pull-request-comment: false
-        # Enable commit comment
-        enable-commit-comment: true
-        # Enable GitHub commit status
-        enable-commit-status: true
-        # Overwrites pull request comment
-        overwrites-pull-request-comment: false
-        # Environment name of GitHub Deployments
-        github-deployment-environment: dev
-        # Description of the GitHub Deployment
-        github-deployment-description: developer 
-        # Fails if no credentials provided
-        fails-without-credentials: true
+        deploy-message: success deploy
+        github-token: ${{secrets.GIT_SECRET}}
+
 
 
 
