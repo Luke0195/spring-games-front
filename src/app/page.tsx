@@ -1,5 +1,5 @@
 'use client'
-import * as BsIcons from 'react-icons/bs'
+import { Logo } from '@/components/Logo'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -18,9 +18,7 @@ export default function Home(): React.ReactNode {
               duration: 2,
             }}>
             <div className="  flex flex-col items-start justify-center px-10 ">
-              <h2 className="text-4xl text-purple-500  font-bold uppercase  align-middle py-0 flex items-center">
-                GameSpot <BsIcons.BsController size={45} className="pl-2" />
-              </h2>
+              <Logo />
               <strong className="py-2 text-lg text-neutral-100">
                 Hello Stranger!
               </strong>
