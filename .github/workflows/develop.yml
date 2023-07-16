@@ -40,8 +40,8 @@ jobs:
         deploy-message: "Go to God 🚀"
         # GitHub token
         GITHUB-TOKEN: ${{ secrets.GIT_TOKEN }}
-        NETLIFY-AUTH-TOKEN: ${{ secrets.NET_ }}
-        NETLITY-SITE-ID: ${{ secrets.NETLIFY_SITE_ID }}
+        NETLIFY-AUTH-TOKEN: ${{ secrets.NET_SECRET }}
+        NETLITY-SITE-ID: ${{ secrets.NET_SITE_ID }}
         # Production branch 
         production-branch: dev
         # Indicate wether to deploy production build
