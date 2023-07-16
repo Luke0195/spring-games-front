@@ -39,7 +39,9 @@ jobs:
         # Custom deploy message for Netlify
         deploy-message: "Go to God 🚀"
         # GitHub token
-        github-token: ${{SECRETS.GIT_TOKEN}}
+        github-token: ${{secrets.GIT_TOKEN}}
+        netlify-auth-token: ${{ secrets.NET_SECRET }}
+        netlify-site-id: ${{ secrets.NET_SITE_ID }}
         # Production branch
         production-branch: dev
         # Indicate wether to deploy production build
