@@ -26,20 +26,15 @@ jobs:
       run: npm run test
    
   teste2e:
-    needs: compile
     runs-on: ubuntu-latest
+    needs: compile
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+    - uses: cypress-io/github-action@v5.0.2
+    - name:  Cypress.io
       with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - name: Install dependencies
-      run: npm install
-    - name: run integration tests
-      run: npx cypress run
-  
+        working-directory: cypress
+        wait-on-timeout: 30
+
   build: 
     needs: teste2e 
     runs-on: ubuntu-latest
