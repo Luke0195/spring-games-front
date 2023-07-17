@@ -32,6 +32,8 @@ jobs:
        matrix:
          node-version: [18.x]
    steps:
+   - name: Install dependencies
+     run: npm install
    - name: Run Integrations tests
      uses: cypress-io/github-action@v5.8.2
      with: 
@@ -71,7 +73,7 @@ jobs:
       # Tag setting for tests
       #tag: # optional
       # Working directory containing Cypress folder
-      working-directory: cypress
+      working-directory: ./
       # Whether or not to use headed mode
      # headed: # optional
       # Whether or not to publish job summary
