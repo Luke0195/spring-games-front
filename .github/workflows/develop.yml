@@ -6,7 +6,7 @@ on:
     branches: [ "develop" ]
   workflow_dispatch:
 jobs:
-  compile:
+  build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -24,24 +24,12 @@ jobs:
       run: npm run lint:fix
     - name: Run all tests
       run: npm run test
-       
-  cypress-teste2e:
-   runs-on: ubuntu-latest
-   needs: compile
-   steps:
-    - uses: actions/checkout@v3
-    - name: Run Cypress Tests
-      uses: cypress-io/github-action@v5.8.2
-      with:
-       comand: npx cypress run
- 
-  build: 
-    needs:  cypress-teste2e 
-    runs-on: ubuntu-latest
-    steps:
-    - name: generate artifect
+    - name: Run testse2e
+      run: npx run cypress run
+    - name: Generate Artifect
       run: npm run build
-     
+      
+
   deploy:
     runs-on: ubuntu-latest
     name: Deploy to EBS 🚀
