@@ -27,6 +27,7 @@ jobs:
    
   teste2e:
    runs-on: ubuntu-latest
+   needs: build
    name: Run e2e tests
    steps:
     - uses: actions/checkout@v3
@@ -35,16 +36,16 @@ jobs:
         browser: true  
       
 
-  deploy:
-    runs-on: ubuntu-latest
-    name: Deploy to EBS 🚀
-    needs: build
-    steps:   
-    - uses: nwtgck/actions-netlify@v2.0.0
-      with:
-        publish-dir: ./.next
-        deploy-message: success deploy
-        github-token: ${{secrets.GIT_SECRET}}
+##  deploy:
+##    runs-on: ubuntu-latest
+##    name: Deploy to EBS 🚀
+##    needs: build
+##    steps:   
+##    - uses: nwtgck/actions-netlify@v2.0.0
+##      with:
+##        publish-dir: ./.next
+##        deploy-message: success deploy
+##        github-token: ${{secrets.GIT_SECRET}}
 
 
 
