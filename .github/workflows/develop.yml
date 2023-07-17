@@ -25,7 +25,7 @@ jobs:
     - name: Run all tests
       run: npm run test
     - name: Run testse2e
-      run: npx run cypress run
+      run: npm run cy:test
     - name: Generate Artifect
       run: npm run build
       
