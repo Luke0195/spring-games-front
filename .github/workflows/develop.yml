@@ -24,10 +24,15 @@ jobs:
       run: npm run lint:fix
     - name: Run all tests
       run: npm run test
-    - name: Run testse2e
-      run: npm run cy:test
-    - name: Generate Artifect
-      run: npm run build
+   
+  teste2e:
+   runs-on: ubuntu-latest
+   name: Run e2e tests
+   steps:
+    - uses: actions/checkout@v3
+    - uses: cypress-io/github-action@v5
+      with:
+        browser: true  
       
 
   deploy:
