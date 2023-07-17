@@ -32,11 +32,17 @@ jobs:
        matrix:
          node-version: [18.x]
    steps:
-   - name: Install dependencies
-     run: npm install
-   - name: Run Integrations tests
-     uses: cypress-io/github-action@v5.8.2
-     with: 
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - name: Install dependencies
+      run: npm install
+    - name: Run Integrations tests
+      uses: cypress-io/github-action@v5.8.2
+      with: 
       # Sends test results to Cypress Cloud
       #record: # optional
       # Overrides the global Cloud configuration to set the failed test threshold for auto cancellation or to disable auto cancellation when recording to the Cloud (requires Cypress 12.x or later)
@@ -44,12 +50,12 @@ jobs:
       # Set configuration values. Separate multiple values with a comma. The values set here override any values set in your configuration file.
       #config: # optional
       # Path to the cypress config file where configuration values are set.
-      config-file: ./cypress.config.ts
+       config-file: ./cypress.config.ts
       # Sets Cypress environment variables
       # Name of the browser to use
       #  browser: # optional
       # Command that overrides cypress run
-      command: npx cypress run
+       command: npx cypress run
       # Command for starting local server in the background
      # start: # optional
       # A different start command on Windows
@@ -57,15 +63,15 @@ jobs:
       # Command to run build step before starting tests
      # build: # optional
       # Whether or not to run install
-      install: npm install
+       install: npm install
       # Custom install command to use
       # install-command: # optional
       # Whether or not to run tests
-      runTests: npx cypress run
+       runTests: npx cypress run
       # Local server URL to wait for
      # wait-on: # optional
       # Amount of time to wait for wait-on url to be available
-      wait-on-timeout: 30
+       wait-on-timeout: 30
       # Whether or not to load balance tests using multiple containers
       #parallel: # optional
       # Group setting for tests
@@ -73,7 +79,7 @@ jobs:
       # Tag setting for tests
       #tag: # optional
       # Working directory containing Cypress folder
-      working-directory: ./
+       working-directory: ./
       # Whether or not to use headed mode
      # headed: # optional
       # Whether or not to publish job summary
@@ -81,7 +87,7 @@ jobs:
       # Provide a specific specs to run
       #spec: # optional
       # Path of project to run
-      project: ./
+       project: ./
       # You can prefix the default test command using the command-prefix option.
       #command-prefix: # optional
       # ID associates multiple CI machines to one test run
