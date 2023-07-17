@@ -1,5 +1,5 @@
-describe('template spec', () => {
-  it('Ensure user provided a correct url to visited the website', () => {
+describe('Home Spec', () => {
+  it('Ensure user visited a website with correct url ', () => {
     cy.visit('http://localhost:3000')
   })
 })
