@@ -31,10 +31,8 @@ jobs:
        matrix:
          node-version: [18.x]
    steps:
-   # You may pin to the exact commit or the version.
-   # uses: cypress-io/github-action@e08da4966cec4d8f99cf72b09d3362aae2c5391c
    - name: Run Integrations tests
-   - uses: cypress-io/github-action@v5.8.2
+     uses: cypress-io/github-action@v5.8.2
      with: 
       # Sends test results to Cypress Cloud
       #record: # optional
@@ -91,6 +89,7 @@ jobs:
     #  quiet: # optional
       # Lets the action know that Cypress is running component tests and not e2e tests
    #  component: # optional
+
 
   build: 
     needs: testse2e 
