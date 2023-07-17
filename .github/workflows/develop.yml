@@ -6,7 +6,7 @@ on:
     branches: [ "develop" ]
   workflow_dispatch:
 jobs:
-  build:
+  compile:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -24,9 +24,21 @@ jobs:
       run: npm run lint:fix
     - name: Run all tests
       run: npm run test
-    - name: Build
-      run: npm run build
+   
+  teste2e:
+    needs: compile
+    runs-on: ubuntu-latest
+    steps:
+    - name: run integration tests
+      run: npx cypress run
   
+  build: 
+    needs: teste2e 
+    runs-on: ubuntu-latest
+    steps:
+    - name: generate artifect
+      run: npm run build
+     
   deploy:
     runs-on: ubuntu-latest
     name: Netlify Actions
