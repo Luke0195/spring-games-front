@@ -24,20 +24,76 @@ jobs:
       run: npm run lint:fix
     - name: Run all tests
       run: npm run test
-   
-  teste2e:
-    needs: compile
-    runs-on: ubuntu-latest
-    steps:
-    - uses: cypress-io/github-action@v5.8.2
-    - name:  Cypress.io
-      with:
-        working-directory: cypress
-        wait-on-timeout: 30
-    - run: npx cypress run
+       
+  testse2e:
+   runs-on: ubuntu-latest
+   strategy:
+       matrix:
+         node-version: [18.x]
+   steps:
+   # You may pin to the exact commit or the version.
+   # uses: cypress-io/github-action@e08da4966cec4d8f99cf72b09d3362aae2c5391c
+   - name: Run Integrations tests
+   - uses: cypress-io/github-action@v5.8.2
+     with: 
+      # Sends test results to Cypress Cloud
+      #record: # optional
+      # Overrides the global Cloud configuration to set the failed test threshold for auto cancellation or to disable auto cancellation when recording to the Cloud (requires Cypress 12.x or later)
+      #auto-cancel-after-failures: # optional
+      # Set configuration values. Separate multiple values with a comma. The values set here override any values set in your configuration file.
+      #config: # optional
+      # Path to the cypress config file where configuration values are set.
+      config-file: ./cypress.config.ts
+      # Sets Cypress environment variables
+      # Name of the browser to use
+      #  browser: # optional
+      # Command that overrides cypress run
+      command: npx cypress run
+      # Command for starting local server in the background
+     # start: # optional
+      # A different start command on Windows
+     # start-windows: # optional
+      # Command to run build step before starting tests
+     # build: # optional
+      # Whether or not to run install
+      install: npm install
+      # Custom install command to use
+      # install-command: # optional
+      # Whether or not to run tests
+      runTests: npx cypress run
+      # Local server URL to wait for
+     # wait-on: # optional
+      # Amount of time to wait for wait-on url to be available
+      wait-on-timeout: 30
+      # Whether or not to load balance tests using multiple containers
+      #parallel: # optional
+      # Group setting for tests
+      #group: # optional
+      # Tag setting for tests
+      #tag: # optional
+      # Working directory containing Cypress folder
+      working-directory: cypress
+      # Whether or not to use headed mode
+     # headed: # optional
+      # Whether or not to publish job summary
+      # publish-summary: # optional, default is true
+      # Provide a specific specs to run
+      #spec: # optional
+      # Path of project to run
+      project: ./
+      # You can prefix the default test command using the command-prefix option.
+      #command-prefix: # optional
+      # ID associates multiple CI machines to one test run
+     # ci-build-id: # optional
+      # Custom cache key
+    #  cache-key: # optional
+      # Whether or not to silence any Cypress specific output from stdout
+    #  quiet: # optional
+      # Lets the action know that Cypress is running component tests and not e2e tests
+   #  component: # optional
 
   build: 
-    needs: teste2e 
+    needs: testse2e 
     runs-on: ubuntu-latest
     steps:
     - name: generate artifect
