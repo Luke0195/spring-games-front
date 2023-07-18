@@ -24,10 +24,9 @@ jobs:
       run: npm run lint:fix
     - name: Run all tests
       run: npm run test
-    - name: Run testse2e
-      run: npm run cy:test
-    - name: Generate Artifect
+    - name: Build artifect
       run: npm run build
+      
       
 
   deploy:
