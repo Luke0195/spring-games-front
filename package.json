@@ -15,7 +15,7 @@
     "test:staged": "npm test -- --findRelatedTests",
     "test:ci": "npm test -- --coverage",
     "cy:open": "npx cypress open --config-file theNewCypressConfigPath",
-    "cy:test": "npx cypress run"
+    "cy:test": "npx cypress run --e2e"
   },
   "dependencies": {
     "@types/react-dom": "18.2.6",
