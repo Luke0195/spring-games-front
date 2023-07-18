@@ -4,16 +4,17 @@ import * as animations from '@/shared/animations'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import '@/shared/responsive.css'
 
 export default function Home(): React.ReactNode {
   return (
-    <>
+    <div className="w-full h-100 home">
       <div className=" bg-gradient-to-bl from-white to-purple-400 h-screen flex flex-col  justify-center relative">
-        <div className="w-3/5 m-auto bg-red p-2 flex align-middle justify-between">
+        <div className="w-3/5 m-auto bg-red p-2 flex align-middle justify-between area">
           <motion.div
             className="h-100 flex flex-col align-middle justify-center"
             {...animations.showContentWithOpacity}>
-            <div className="  flex flex-col items-start justify-center px-10 ">
+            <div className="  flex flex-col items-start justify-center px-10 form">
               <Logo />
               <strong className="py-2 text-lg text-neutral-100">
                 Hello Stranger!
@@ -30,7 +31,7 @@ export default function Home(): React.ReactNode {
             </div>
           </motion.div>
           <motion.div
-            className=" mix-blend-multiply"
+            className=" mix-blend-multiply img"
             {...animations.animationMovingLeftWithOpacity}>
             <Image
               src={'/img/cybersport_02.jpg'}
@@ -42,6 +43,6 @@ export default function Home(): React.ReactNode {
           </motion.div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
